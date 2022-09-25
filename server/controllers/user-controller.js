@@ -1,7 +1,12 @@
-import { query } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 
-let users  = []
+let users  = [{
+    name:'farhan',
+    email:'farhan@yahoo.com',
+    password:'123456',
+    id:uuidv4()
+}];
+
 
 export const getallUsers = (req, res) => {
     res.status(200).json(users)
