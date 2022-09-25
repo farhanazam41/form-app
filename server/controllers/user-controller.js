@@ -1,11 +1,30 @@
 import { v4 as uuidv4 } from 'uuid';
 
 let users  = [{
-    name:'farhan',
-    email:'farhan@yahoo.com',
-    password:'123456',
+    name: 'John',
+    email: 'john@yahoo.com',
+    password: '123456',
+    number: '1234567890',
+    age: '20',
     id:uuidv4()
-}];
+},
+{
+    name: 'Jane',
+    email: 'jane@yahoo.com',
+    password: '123456',
+    number: '1234567890',
+    age: '20',
+    id:uuidv4()
+},
+{
+    name: 'Farhan',
+    email: 'Farhan@yahoo.com',
+    password: '123456',
+    number: '3216549870',
+    age: '28',
+    id:uuidv4()
+}
+];
 
 
 export const getallUsers = (req, res) => {
