@@ -1,7 +1,7 @@
 import './App.css';
 import AddUserForm from './components/form/addUserForm';
 import EditUserForm from './components/form/editUserForm';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import UsersList from './components/users/usersList';
 
 const initialState = [
@@ -28,6 +28,17 @@ function App() {
   const [editUser, setEditUser] = useState(null);
   const [currentUser, setCurrentUser] = useState(null);
 
+  useEffect(() => {
+    fetch('http://localhost:8000/users/getallusers').then(res =>{
+      if(res.status === 200){
+        console.log('in here')
+        return res.json()
+      }
+   }).then(data => {
+      console.log(data);
+      setUsers(data);
+    })
+  },[])
 
   const addUser = (user) => {
     
